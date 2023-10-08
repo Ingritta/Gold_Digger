@@ -100,7 +100,7 @@ form {
 body {
   background-repeat: no-repeat, repeat;
   background-color: #cccccc;
-  height: 500px;
+  height: 850px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,3 +138,7 @@ body {
   margin-top: 2.5rem!important;
 }
 
+.my-5 {
+  margin-top: 10rem!important;
+  margin-bottom: 3rem!important;
+}

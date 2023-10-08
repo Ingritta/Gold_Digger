@@ -4,22 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Digger</title>
+  <title>Bootstrap Components</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <link rel="stylesheet" href="./style.css" />
 
   <style>
     body {
-      background-image: url("gold-ring-1.jpg");
+      background-image: url("images/front-3.jpg");
+      height: 1300px;
+    }
+
+    .py-5 {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
     }
 
     .form-signin {
-      max-width: 530px;
+      max-width: 700px;
       padding: 1rem;
     }
-
-  </style>
+      </style>
 </head>
 
 <body>
@@ -78,14 +83,84 @@
   </nav>
 
   <main class="form-signin w-100 m-auto">
+
     <div class="px-4 py-5 my-5 text-center">
-      <p class="lead mb-4">Zostałeś pomyślnie zalogowany.</h1>
-        <img class="d-block mx-auto mb-4" src="coin-flip-4.gif" alt="" width="72" height="72" border-radius="80%">
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">Wybierz dostępną opcję. </p>
-        <p class="lead mb-4">Zaczynamy!</p>
-      </div>
+      <button type="button" class="btn btn-primary">Wybierz daty</button>
     </div>
+
+
+    <div>
+      <p class="head-of-table">Przychody</p>
+      <table class="table table-dark table-hover">
+        <tr>
+          <th>Id</th>
+          <th>Data</th>
+          <th>Kwota</th>
+          <th>Kategoria</th>
+          <th>Komentarz</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>01.01.2023</td>
+          <td>100.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>02.01.2023</td>
+          <td>200.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>03.01.2023</td>
+          <td>300.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="my-pie-chart"></div>
+
+    <div>
+      <p class="head-of-table">Wydatki</p>
+      <table class="table table-dark table-hover">
+        <tr>
+          <th>Id</th>
+          <th>Data</th>
+          <th>Kwota</th>
+          <th>Kategoria</th>
+          <th>Komentarz</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>01.01.2023</td>
+          <td>100.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>02.01.2023</td>
+          <td>200.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>03.01.2023</td>
+          <td>300.56</td>
+          <td>Brak</td>
+          <td>Brak</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="my-pie-chart"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
