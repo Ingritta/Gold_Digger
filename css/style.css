@@ -129,16 +129,18 @@ body {
   margin-top: 0rem !important;
 }
 
-#my-pie-chart {
+.my-pie-chart {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   background: conic-gradient(brown 0.00%, black 0.00% 0.55%, blue 0.55% 6.08%, green 6.08% 13.68%, yellow 13.68% 23.27%, orange 23.27% 40.47%, red 40.47%);
   margin-bottom: 2.0rem!important;
   margin-top: 2.5rem!important;
-}
+  margin-right: auto!important;
+  margin-left: auto!important;
+  }
 
 .my-5 {
-  margin-top: 10rem!important;
+  margin-top: 12rem!important;
   margin-bottom: 3rem!important;
 }
