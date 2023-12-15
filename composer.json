@@ -1,0 +1,16 @@
+{
+    "name": "gold/digger",
+    "description": "save money application",
+    "autoload": {
+        "psr-4": {
+            "Gold\\Digger\\": "Core/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ewelina Przeworska",
+            "email": "ewelina.przeworska.programista@gmail.com"
+        }
+    ],
+    "require": {}
+}
