@@ -1,18 +1,25 @@
-{% extends 'baseNew.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Sign up{% endblock %}
-
-{% block menu %}<a class="nav-link" href="/login">Logowanie</a>{% endblock %}
+{% block title %}Edit{% endblock %}
 
 {% block body %}
+
+<h1>Profile</h1>
+{% if user.errors is not empty %}
+<p>Error: </p>
+<ul>
+    {% for error in user.errors %}
+    <li>{{ error }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 <main class="form-signin w-100 m-auto">
-    <form method="post" action="/signup/create" id="formSignup">
+    <form method="post" action="/profile/update" id="formProfile">
         <h1 class="h3 mb-3 fw-normal">Podaj dane użytkownika</h1>
 
         <div class="form-floating">
             <input type="name" class="form-control" id="floatingInput" placeholder="Name"
-                data-nlok-ref-guid="b165b106-74fc-4d1d-a447-b71f45cafb0b" autocomplete="off" name="name" autofocus
-                value="{{ user.name }}">
+                data-nlok-ref-guid="b165b106-74fc-4d1d-a447-b71f45cafb0b" autocomplete="off">
             <div id="norton-idsafe-field-styling-divId"
                 style="height:24px;max-width:24px;vertical-align:top; position:absolute; top:17px;left:264.38709677419354px;cursor:pointer;resize: both;z-index:2147483646;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
@@ -22,12 +29,11 @@
                 </svg>
             </div>
             <label for="floatingInput">Imię</label>
-            <!-- <input id="floatingInput" name="name" placeholder="Name" autofocus value="{{ user.name }}" /> -->
+            <input id="floatingInput" name="name" placeholder="Name" value="{{ user.name }}" />
         </div>
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="email address"
-                data-nlok-ref-guid="b165b106-74fc-4d1d-a447-b71f45cafb0b" autocomplete="off" name="email"
-                value="{{ user.email }}" required type="email">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                data-nlok-ref-guid="b165b106-74fc-4d1d-a447-b71f45cafb0b" autocomplete="off">
             <div id="norton-idsafe-field-styling-divId"
                 style="height:24px;max-width:24px;vertical-align:top; position:absolute; top:17px;left:264.38709677419354px;cursor:pointer;resize: both;z-index:2147483646;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-at"
@@ -37,12 +43,12 @@
                 </svg>
             </div>
             <label for="floatingInput">Adres e-mail</label>
-            <!-- <input id="floatingInput" name="email" placeholder="email address" value="{{ user.email }}" required
-          type="email" /> -->
+            <input id="floatingInput" name="email" placeholder="email address" value="{{ user.email }}" required
+                type="email" />
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password"
-                data-nlok-ref-guid="ffb8d5ff-837f-4317-da36-63839eb09644" autocomplete="off" name="password">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                data-nlok-ref-guid="ffb8d5ff-837f-4317-da36-63839eb09644" autocomplete="off">
             <div id="norton-idsafe-field-styling-divId"
                 style="height:24px;max-width:24px;vertical-align:top; position:absolute; top:17px;left:264.38709677419354px;cursor:pointer;resize: both;z-index:2147483646;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key"
@@ -53,49 +59,39 @@
                 </svg>
             </div>
             <label for="floatingPassword">Hasło</label>
-            <!-- <input type="password" id="inputPassword" name="password" placeholder="Password" /> -->
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="inputPasswordConfirmation" name="password_confirmation"
-                placeholder="Repeat password" data-nlok-ref-guid="ffb8d5ff-837f-4317-da36-63839eb09644"
-                autocomplete="off">
-            <div id="norton-idsafe-field-styling-divId"
-                style="height:24px;max-width:24px;vertical-align:top; position:absolute; top:17px;left:264.38709677419354px;cursor:pointer;resize: both;z-index:2147483646;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
-                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                </svg>
-            </div>
-            <label for="floatingPassword">Powtórz hasło</label>
-            <!-- <input type="password" id="inputPasswordConfirmation" name="password_Confirmation"
-          placeholder="Repeat password" /> dopisane -->
+            <input type="password" id="inputPassword" name="password" placeholder="Password" />
+            <span>Pozostaw puste jeśli chcesz zachować stare hasło</span>
         </div>
         <button class="btn btn-primary w-100 py-2" type="submit"
-            data-nlok-ref-guid="aeaf789e-b250-4308-f552-159fdf94865d">Zarejestruj się</button>
+            data-nlok-ref-guid="aeaf789e-b250-4308-f552-159fdf94865d">Zapisz</button>
+        <a href="/profile/show">Wyjdź</a>
     </form>
 </main>
-
-</body>
 {% endblock %}
 
 {% block footer %}
-
 <script src="/js/app.js"></script>
 <script>
     $(document).ready(function () {
 
-        $('#formSignup').validate({
+        var userId = '{{ user.id }}';
+
+        $('#formProfile').validate({
             rules: {
                 name: 'required',
                 email: {
                     required: true,
                     email: true,
-                    remote: '/account/validate-email'
+                    remote: {
+                        url: '/account/validate-email',
+                        data: {
+                            ignore_id: function () {
+                                return userId
+                            }
+                        }
+                    }
                 },
                 password: {
-                    required: true,
                     minlength: 6,
                     validPassword: true
                 }
@@ -106,16 +102,12 @@
                 }
             }
         });
+
+        $('#inputPassword').hideShowPassword({
+            show: false,
+            innerToggle: 'focus'
+        });
     });
-
-    function myFunction() {
-        let x = document.getElementById('inputPassword');
-
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
 </script>
+
 {% endblock %}

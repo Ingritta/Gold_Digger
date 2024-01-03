@@ -1,16 +1,22 @@
 {
-    "name": "gold/digger",
-    "description": "save money application",
+    "require":
+    {
+        "twig/twig": "^3.0",
+        "phpmailer/phpmailer": "^6.9",
+        "mailgun/mailgun-php": "^4.0",
+        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/message": "^1.16",
+        "http-interop/http-factory-guzzle": "^1.2"
+    },
     "autoload": {
         "psr-4": {
-            "Gold\\Digger\\": "Core/"
+             "Core\\": "Core/",
+             "App\\": "App/"
         }
     },
-    "authors": [
-        {
-            "name": "Ewelina Przeworska",
-            "email": "ewelina.przeworska.programista@gmail.com"
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
         }
-    ],
-    "require": {}
+    }
 }

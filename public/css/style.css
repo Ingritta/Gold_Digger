@@ -26,7 +26,8 @@
   --bs-btn-disabled-color: #fff;
 }
 
-.navbar-dark,.navbar[data-bs-theme=dark] {
+.navbar-dark,
+.navbar[data-bs-theme=dark] {
   --bs-navbar-color: #FCFAF1;
   --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
   --bs-navbar-active-color: #fff;
@@ -63,11 +64,13 @@
   font-weight: 300;
 }
 
-.btn-group-lg>.btn,.btn-lg {
+.btn-group-lg>.btn,
+.btn-lg {
   --bs-btn-font-size: 1.25rem;
 }
 
-.h1,h1 {
+.h1,
+h1 {
   margin-bottom: 1.50rem;
 }
 
@@ -111,8 +114,8 @@ body {
   border-radius: 80%;
   width: 65px;
   height: 65px;
-  margin-bottom: 1.5rem!important;
-  margin-top: 1.5rem!important;
+  margin-bottom: 1.5rem !important;
+  margin-top: 1.5rem !important;
 }
 
 .mb-3 {
@@ -134,13 +137,35 @@ body {
   width: 200px;
   border-radius: 50%;
   background: conic-gradient(brown 0.00%, black 0.00% 0.55%, blue 0.55% 6.08%, green 6.08% 13.68%, yellow 13.68% 23.27%, orange 23.27% 40.47%, red 40.47%);
-  margin-bottom: 2.0rem!important;
-  margin-top: 2.5rem!important;
-  margin-right: auto!important;
-  margin-left: auto!important;
-  }
+  margin-bottom: 2.0rem !important;
+  margin-top: 2.5rem !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
 
 .my-5 {
-  margin-top: 12rem!important;
-  margin-bottom: 3rem!important;
+  margin-top: 12rem !important;
+  margin-bottom: 3rem !important;
 }
+
+/* okno alertów */
+.alert-success {
+  border: 1px solid #ccc;
+  background-color: #cccccc;
+  padding: 6px;
+}
+
+.alert-info {
+  display: block !important;
+  border: 1px solid #ccc;
+  background-color: #cccccc;
+  padding: 6px;
+}
+
+.alert-warning {
+  display: block !important;
+  border: 1px solid #ccc;
+  background-color: #cccccc;
+  padding: 6px;
+}
+

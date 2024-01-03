@@ -3,12 +3,13 @@
 namespace App\Controllers;
 
 use \Core\View;
-use \App\Auth;
 
-class Home extends \Core\Controller
+class Items extends Authenticated
 {
     public function indexAction()
     {
+        $this->requireLogin();
+
         View::renderTemplate('Home/index.html');
     }
 }

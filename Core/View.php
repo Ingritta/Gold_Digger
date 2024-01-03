@@ -2,22 +2,9 @@
 
 namespace Core;
 
-/**
- * View
- *
- * PHP version 7.0
- */
 class View
 {
 
-    /**
-     * Render a view file
-     *
-     * @param string $view  The view file
-     * @param array $args  Associative array of data to display in the view (optional)
-     *
-     * @return void
-     */
     public static function render($view, $args = [])
     {
         extract($args, EXTR_SKIP);
@@ -31,24 +18,9 @@ class View
         }
     }
 
-    /**
-     * Render a view template using Twig
-     *
-     * @param string $template  The template file
-     * @param array $args  Associative array of data to display in the view (optional)
-     *
-     * @return void
-     */
     public static function renderTemplate($template, $args = [])
     {
-        static $twig = null;
-
-        if ($twig === null) {
-            $loader = new \Twig_Loader_Filesystem(dirname(__DIR__) . '/App/Views');
-            $twig = new \Twig_Environment($loader);
-        }
-
-        echo $twig->render($template, $args);
+        echo static::getTemplate($template, $args);
     }
 
     public static function getTemplate($template, $args = [])
@@ -63,7 +35,7 @@ class View
             $twig->addExtension(new \Twig\Extension\DebugExtension());
             $twig->addGlobal('current_user', \App\Auth::getUser());
             $twig->addGlobal('flash_messages', \App\Flash::getMessages());
-            $twig->addGlobal('session', $_SESSION);
+            //$twig->addGlobal('session', $_SESSION);
         }
 
         return $twig->render($template, $args);
